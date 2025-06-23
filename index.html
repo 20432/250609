@@ -9,17 +9,35 @@
 </head>
 <body>
     <div class="container fortune-theme">
+        <div class="settings">
+            <button id="sound-toggle" class="setting-button">🔊</button>
+            <button id="theme-toggle" class="setting-button">🌙</button>
+        </div>
         <h1>你吉嗎我很吉</h1>
+        <div class="season-banner">
+            <!-- 節日橫幅會在這裡動態顯示 -->
+        </div>
         <div class="fortune-box">
             <div id="fortune-text" class="fortune-text"></div>
             <div id="fortune-result" class="fortune-result"></div>
         </div>
         <div class="button-group">
-            <button id="draw-button" class="draw-button">抽籤</button>
-            <button id="love-button" class="love-button">桃花籤</button>
-            <button id="rainbow-button" class="rainbow-button">彩虹籤</button>
+            <button id="draw-button" class="draw-button">抽運勢籤</button>
+            <button id="love-button" class="love-button">抽桃花籤</button>
+            <button id="rainbow-button" class="rainbow-button">抽彩虹籤</button>
+            <button id="character-button" class="character-button">抽明星籤</button>
+            <button id="season-button" class="season-button" style="display: none;">節慶特籤</button>
         </div>
     </div>
+
+    <!-- 音效元素 -->
+    <audio id="draw-sound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2571/2571-preview.mp3" type="audio/mpeg">
+    </audio>
+    <audio id="result-sound" preload="auto">
+        <source src="https://assets.mixkit.co/active_storage/sfx/2574/2574-preview.mp3" type="audio/mpeg">
+    </audio>
+
     <script src="script.js"></script>
 </body>
 </html>

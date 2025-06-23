@@ -21,17 +21,20 @@ body {
 
 /* 一般運勢主題 */
 .container.fortune-theme {
-    background: linear-gradient(135deg, #ffffff 0%, #f0f8ff 100%);
-    border: 2px solid #4CAF50;
+    background: rgba(255, 223, 0, 0.1);
+    border: 1px solid rgba(255, 200, 0, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(255, 223, 0, 0.2);
 }
 
 .container.fortune-theme .fortune-box {
-    background: rgba(76, 175, 80, 0.05);
-    border: 2px solid #4CAF50;
+    background: rgba(255, 255, 255, 0.3);
+    border: 1px solid rgba(255, 200, 0, 0.3);
+    box-shadow: inset 0 0 15px rgba(255, 223, 0, 0.1);
 }
 
 .container.fortune-theme h1 {
-    color: #2E7D32;
+    color: #FFB700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 /* 桃花運主題 */
@@ -74,6 +77,24 @@ body {
     -webkit-text-fill-color: transparent;
 }
 
+/* 角色籤主題 */
+.container.character-theme {
+    background: linear-gradient(135deg, #ffffff 0%, #e6f3ff 100%);
+    border: 2px solid #4CAF50;
+    box-shadow: 0 8px 32px 0 rgba(76, 175, 80, 0.2);
+}
+
+.container.character-theme .fortune-box {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid #4CAF50;
+    box-shadow: inset 0 0 15px rgba(76, 175, 80, 0.1);
+}
+
+.container.character-theme h1 {
+    color: #2E7D32;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
 h1 {
     color: #333;
     margin-bottom: 2rem;
@@ -103,7 +124,7 @@ h1 {
 }
 
 .draw-button {
-    background-color: #4CAF50;
+    background: linear-gradient(45deg, #FFD700, #FFA500);
     color: white;
     border: none;
     padding: 1rem 2.5rem;
@@ -115,7 +136,7 @@ h1 {
 }
 
 .draw-button:hover {
-    background-color: #45a049;
+    background: linear-gradient(45deg, #FFA500, #FFD700);
     transform: scale(1.05);
 }
 
@@ -179,6 +200,26 @@ h1 {
     transform: scale(0.95);
 }
 
+.character-button {
+    background: linear-gradient(45deg, #4CAF50, #81C784);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.character-button:hover {
+    background: linear-gradient(45deg, #81C784, #4CAF50);
+    transform: scale(1.05);
+}
+
+.character-button:active {
+    transform: scale(0.95);
+}
+
 @keyframes rainbow { 
     0% { background-position: 0% 82% }
     50% { background-position: 100% 19% }
@@ -193,4 +234,107 @@ h1 {
     -webkit-text-fill-color: transparent;
     background-size: 1800% 1800%;
     animation: rainbow 18s ease infinite;
+}
+
+.fortune-text.character {
+    color: #2E7D32;
+}
+
+/* 設定按鈕樣式 */
+.settings {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.setting-button {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.setting-button:hover {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 節日橫幅樣式 */
+.season-banner {
+    padding: 0.5rem;
+    margin: 1rem 0;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-align: center;
+    animation: shine 2s infinite;
+    display: none;
+}
+
+.season-banner.visible {
+    display: block;
+}
+
+/* 節慶特籤按鈕 */
+.season-button {
+    background: linear-gradient(45deg, #FFD700, #FF69B4);
+    color: white;
+    border: none;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.season-button:hover {
+    background: linear-gradient(45deg, #FF69B4, #FFD700);
+    transform: scale(1.05);
+}
+
+/* 深色主題 */
+.dark-theme {
+    background-color: #1a1a1a;
+    color: #ffffff;
+}
+
+.dark-theme .fortune-box {
+    background-color: #2d2d2d;
+    border-color: #3d3d3d;
+}
+
+/* 搖籤動畫 */
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+@keyframes shine {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+.shaking {
+    animation: shake 0.5s ease-in-out;
+}
+
+/* 結果顯示動畫 */
+.result-show {
+    animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
